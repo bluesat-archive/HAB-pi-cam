@@ -15,23 +15,21 @@ WARNING: THIS CANNOT BE UNDONE!
 "
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
-        Yes )
-		cd Pictures
-		rm -f *.jpg
-		cd ../Videos
-		rm -f *.h264
-		echo "
+        Yes)
+			rm -f Pictures/*.jpg
+			rm -f Videos/*.h264
+			echo "
 Removed all media"
-		exit 1;;
-        No )
-		echo "
+			exit 1;;
+        No)
+			echo "
 Did not remove anything"
-		exit 1;;
-	Cancel )
-		echo "
+			exit 1;;
+		Cancel)
+			echo "
 Cancelled"
-		exit 1;;
-	*)
-		echo "Invalid Option";;
+			exit 1;;
+		*)
+			echo "Invalid Option";;
     esac
 done
